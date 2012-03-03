@@ -1,13 +1,35 @@
-//
-//  TMTestTableViewController.m
-//  ExpandingView
-//
-//  Created by Tony Million on 03/03/2012.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+/*
+ Copyright (c) 2012, Tony Million.
+ All rights reserved.
+ 
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ 
+ 1. Redistributions of source code must retain the above copyright notice, this
+ list of conditions and the following disclaimer.
+ 
+ 2. Redistributions in binary form must reproduce the above copyright notice,
+ this list of conditions and the following disclaimer in the documentation
+ and/or other materials provided with the distribution.
+ 
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+ LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE. 
+ */
+
 
 #import "TMTestTableViewController.h"
 #import "UITabBarController+hidable.h"
+
+#import "TMPostDetailViewController.h"
 
 @interface TMTestTableViewController ()
 
@@ -25,6 +47,8 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        self.title = NSLocalizedString(@"SOCIAL APP!", @"");
+        hidden = NO;
     }
     return self;
 }
@@ -45,6 +69,18 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:hidden 
+                                             animated:YES];
+    
+    [self.tabBarController setTabBarHidden:hidden 
+                                  animated:NO];
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -82,7 +118,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%d", indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"Awesome Post Number: %d", indexPath.row];
     
     return cell;
 }
@@ -92,6 +128,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView  deselectRowAtIndexPath:indexPath animated:YES];
+    
+    TMPostDetailViewController * pdvc = [[TMPostDetailViewController alloc] init];
+    
+    [self.navigationController pushViewController:pdvc 
+                                         animated:YES];
 }
 
 #pragma mark - The Magic!

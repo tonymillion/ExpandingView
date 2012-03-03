@@ -25,8 +25,9 @@
  POSSIBILITY OF SUCH DAMAGE. 
  */
 
-@interface UITabBarController (hidable)
 
-- (void)setTabBarHidden:(BOOL)hidden animated:(BOOL)animated;
+#import <UIKit/UIKit.h>
+
+@interface TMPostDetailViewController : UIViewController
 
 @end

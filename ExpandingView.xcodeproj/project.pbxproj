@@ -15,6 +15,8 @@
 		EA076AC715021CDC00AB9B5F /* TMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA076AC615021CDC00AB9B5F /* TMAppDelegate.m */; };
 		EA4AFEB015021D5700E06304 /* TMTestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4AFEAF15021D5700E06304 /* TMTestTableViewController.m */; };
 		EA4AFEB115021F6B00E06304 /* UITabBarController+hidable.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4AFEAC15021D0F00E06304 /* UITabBarController+hidable.m */; };
+		EA4AFEBA150220DF00E06304 /* TMPostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4AFEB8150220DF00E06304 /* TMPostDetailViewController.m */; };
+		EA4AFEBB150220DF00E06304 /* TMPostDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA4AFEB9150220DF00E06304 /* TMPostDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,9 @@
 		EA4AFEAC15021D0F00E06304 /* UITabBarController+hidable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+hidable.m"; sourceTree = "<group>"; };
 		EA4AFEAE15021D5700E06304 /* TMTestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMTestTableViewController.h; sourceTree = "<group>"; };
 		EA4AFEAF15021D5700E06304 /* TMTestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMTestTableViewController.m; sourceTree = "<group>"; };
+		EA4AFEB7150220DF00E06304 /* TMPostDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMPostDetailViewController.h; sourceTree = "<group>"; };
+		EA4AFEB8150220DF00E06304 /* TMPostDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMPostDetailViewController.m; sourceTree = "<group>"; };
+		EA4AFEB9150220DF00E06304 /* TMPostDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMPostDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +90,9 @@
 				EA4AFEAF15021D5700E06304 /* TMTestTableViewController.m */,
 				EA4AFEAB15021D0F00E06304 /* UITabBarController+hidable.h */,
 				EA4AFEAC15021D0F00E06304 /* UITabBarController+hidable.m */,
+				EA4AFEB7150220DF00E06304 /* TMPostDetailViewController.h */,
+				EA4AFEB8150220DF00E06304 /* TMPostDetailViewController.m */,
+				EA4AFEB9150220DF00E06304 /* TMPostDetailViewController.xib */,
 			);
 			path = ExpandingView;
 			sourceTree = "<group>";
@@ -152,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA076AC115021CDC00AB9B5F /* InfoPlist.strings in Resources */,
+				EA4AFEBB150220DF00E06304 /* TMPostDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +175,7 @@
 				EA076AC715021CDC00AB9B5F /* TMAppDelegate.m in Sources */,
 				EA4AFEB115021F6B00E06304 /* UITabBarController+hidable.m in Sources */,
 				EA4AFEB015021D5700E06304 /* TMTestTableViewController.m in Sources */,
+				EA4AFEBA150220DF00E06304 /* TMPostDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
