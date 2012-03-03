@@ -1,0 +1,9 @@
+This is a *really quick* emulation of the pinterest / piictu style UI where the navigation bar and tabbar slide off screen when a tableview is scrolled up, then reappear when the tableview is scrolled down.
+
+I knocked it up very quickly as a demo to see how they do it. I use a category on UITabBarController to hide/show the UITabBar.
+
+For the most part it works exactly as the other apps do - there is a *slight* visual thing where the tabbarviewcontroller content will resize before the tabbar has completed the slide in animation. After carefully looking at the pinterest app I can see they have the same problem.
+
+What would be best would be to subclass UITabBarController so it can keep a certain amount of state internally and resize the content properly - however this is discouraged by Apple, so this is the best trade off.
+
+The secret to hiding the red flash is to set the windows background colour to the background colour of your table, the animation is so fast that unless you're looking for it, you wont see it.

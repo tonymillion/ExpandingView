@@ -78,9 +78,13 @@
     [self.navigationController setNavigationBarHidden:hidden 
                                              animated:YES];
     
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     [self.tabBarController setTabBarHidden:hidden 
                                   animated:NO];
-
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
