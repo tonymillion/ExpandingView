@@ -22,7 +22,7 @@
  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- POSSIBILITY OF SUCH DAMAGE. 
+ POSSIBILITY OF SUCH DAMAGE.
  */
 
 
@@ -35,7 +35,6 @@
 - (void)setTabBarHidden:(BOOL)hidden animated:(BOOL)animated
 {
     NSLog(@"setTabBarHidden:%d animated:%d", hidden, animated);
-    
     
 	if ( [self.view.subviews count] < 2 )
 		return;
@@ -54,59 +53,57 @@
         {
             NSLog(@"HIDDEN - ANIMATED");
             
-            [UIView animateWithDuration:0.2 
+            [UIView animateWithDuration:0.2
                              animations:^{
                                  contentView.frame = self.view.bounds;
                                  
-                                 self.tabBar.frame = CGRectMake(self.view.bounds.origin.x, 
-                                                                self.view.bounds.size.height, 
-                                                                self.view.bounds.size.width, 
+                                 self.tabBar.frame = CGRectMake(self.view.bounds.origin.x,
+                                                                self.view.bounds.size.height,
+                                                                self.view.bounds.size.width,
                                                                 TABBAR_HEIGHT);
                              }
                              completion:^(BOOL finished) {
-                                 self.tabBar.frame = CGRectMake(self.view.bounds.origin.x, 
-                                                                self.view.bounds.size.height, 
-                                                                self.view.bounds.size.width, 
-                                                                0);
+                                 self.tabBar.frame = CGRectMake(self.view.bounds.origin.x,
+                                                                self.view.bounds.size.height,
+                                                                self.view.bounds.size.width,
+                                                                TABBAR_HEIGHT);
                              }];
         }
-        else 
+        else
         {
             NSLog(@"HIDDEN");
             
             contentView.frame = self.view.bounds;
             
-            self.tabBar.frame = CGRectMake(self.view.bounds.origin.x, 
-                                           self.view.bounds.size.height, 
-                                           self.view.bounds.size.width, 
-                                           0);
-            
+            self.tabBar.frame = CGRectMake(self.view.bounds.origin.x,
+                                           self.view.bounds.size.height,
+                                           self.view.bounds.size.width,
+                                           TABBAR_HEIGHT);
         }
     }
-    else 
+    else
     {
-        self.tabBar.frame = CGRectMake(self.view.bounds.origin.x, 
-                                       self.view.bounds.size.height, 
-                                       self.view.bounds.size.width, 
-                                       TABBAR_HEIGHT);
-
+        self.tabBar.frame = CGRectMake(self.view.bounds.origin.x,
+                                       self.view.bounds.size.height,
+                                       self.view.bounds.size.width,
+                                       0);
         if(animated)
         {
             NSLog(@"NOT HIDDEN - ANIMATED");
-            [UIView animateWithDuration:0.2 
+            [UIView animateWithDuration:0.2
                              animations:^{
+                                 self.tabBar.frame = CGRectMake(self.view.bounds.origin.x,
+                                                                self.view.bounds.size.height - TABBAR_HEIGHT,
+                                                                self.view.bounds.size.width,
+                                                                TABBAR_HEIGHT);
+                             }   completion:^(BOOL finished) {
                                  contentView.frame = CGRectMake(self.view.bounds.origin.x,
                                                                 self.view.bounds.origin.y,
                                                                 self.view.bounds.size.width,
                                                                 self.view.bounds.size.height - TABBAR_HEIGHT);
-                                 
-                                 self.tabBar.frame = CGRectMake(self.view.bounds.origin.x, 
-                                                                self.view.bounds.size.height - TABBAR_HEIGHT, 
-                                                                self.view.bounds.size.width, 
-                                                                TABBAR_HEIGHT);         
                              }];
         }
-        else 
+        else
         {
             NSLog(@"NOT HIDDEN");
             contentView.frame = CGRectMake(self.view.bounds.origin.x,
@@ -114,11 +111,11 @@
                                            self.view.bounds.size.width,
                                            self.view.bounds.size.height - TABBAR_HEIGHT);
             
-            self.tabBar.frame = CGRectMake(self.view.bounds.origin.x, 
-                                           self.view.bounds.size.height - TABBAR_HEIGHT, 
-                                           self.view.bounds.size.width, 
-                                           TABBAR_HEIGHT);          
-        }        
+            self.tabBar.frame = CGRectMake(self.view.bounds.origin.x,
+                                           self.view.bounds.size.height - TABBAR_HEIGHT,
+                                           self.view.bounds.size.width,
+                                           TABBAR_HEIGHT);
+        }
     }
 }
 
