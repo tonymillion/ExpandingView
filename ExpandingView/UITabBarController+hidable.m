@@ -63,7 +63,7 @@
                                                                 TABBAR_HEIGHT);
                              }
                              completion:^(BOOL finished) {
-                                 self.tabBar.frame = CGRectMake(self.view.bounds.origin.x,
+                                 contentView.frame = CGRectMake(self.view.bounds.origin.x,
                                                                 self.view.bounds.size.height,
                                                                 self.view.bounds.size.width,
                                                                 TABBAR_HEIGHT);
